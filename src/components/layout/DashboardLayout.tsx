@@ -1,4 +1,4 @@
-import { AppShell } from '@mantine/core';
+import { AppShell, Box } from '@mantine/core';
 import Head from 'next/head';
 import { PropsWithChildren, useState } from 'react';
 import DashboardHeader from './layout-components/DashboardHeader';
@@ -6,19 +6,17 @@ import DashboardNavbar from './layout-components/DashboardNavbar';
 
 interface Props {
 	title?: string;
-	Actions?: React.ReactNode;
 }
 
 const DashboardLayout: React.FC<PropsWithChildren<Props>> = ({
 	children,
 	title,
-	Actions,
 }) => {
 	const [opened, setOpened] = useState(false);
 	return (
 		<div>
 			<Head>
-				<title>{title ? title : 'Dashboard'}</title>
+				<title>{`UrbanAbode - ${title ? title : 'Dashboard'}`}</title>
 				<meta
 					name='viewport'
 					content='minimum-scale=1, initial-scale=1, width=device-width'
@@ -26,12 +24,16 @@ const DashboardLayout: React.FC<PropsWithChildren<Props>> = ({
 			</Head>
 			<AppShell
 				header={<DashboardHeader opened={opened} setOpened={setOpened} />}
-				// navbarOffsetBreakpoint='sm'
-				// asideOffsetBreakpoint='sm'
+				navbarOffsetBreakpoint='sm'
+				asideOffsetBreakpoint='sm'
 				navbar={<DashboardNavbar opened={opened} onOpened={setOpened} />}
-			>
-				<main className='sm:pr-2 px-0'>{children}</main>
-			</AppShell>
+				children={children}
+				footer={
+					<Box className='flex justify-center items-center bg-black text-white'>
+						lorem400
+					</Box>
+				}
+			></AppShell>
 		</div>
 	);
 };

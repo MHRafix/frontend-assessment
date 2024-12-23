@@ -7,9 +7,8 @@ import {
 	Text,
 } from '@mantine/core';
 import {
-	IconBook,
-	IconUsers,
-	IconVocabulary,
+	IconBuildingSkyscraper,
+	IconDashboard,
 	IconX,
 } from '@tabler/icons-react';
 import Image from 'next/image';
@@ -33,12 +32,12 @@ const DashboardNavbar: React.FC<Props> = ({ opened, onOpened }) => {
 		>
 			<Navbar.Section>
 				<Space h={10} />
-				<div className='flex items-center justify-start pl-3 my-8'>
+				<div className='flex items-center justify-center mt-5'>
 					<Image
 						src={'/assets/Logo/logo.png'}
 						alt='logo'
 						width={250}
-						height={100}
+						height={80}
 						className='!w-[250px] !object-cover'
 					/>
 				</div>
@@ -78,9 +77,10 @@ const DashboardNavbar: React.FC<Props> = ({ opened, onOpened }) => {
 							item?.href === '/rating_&&_reviews' ||
 							item?.href === '/reception_management/task_review'
 						}
-						active={asPath.includes(item.href)}
+						active={asPath === item.href}
 						defaultOpened={asPath.includes(item.href)}
 						py={10}
+						my={5}
 						styles={() => ({
 							// theme.colors.brand[9]
 							root: {
@@ -89,7 +89,7 @@ const DashboardNavbar: React.FC<Props> = ({ opened, onOpened }) => {
 								fontSize: 20,
 							},
 						})}
-					/>
+					></NavLink>
 				))}
 			</Navbar.Section>
 			<Space h={20} />
@@ -104,18 +104,13 @@ export default DashboardNavbar;
 
 export const menus = [
 	{
-		label: 'Lesson Management',
-		icon: <IconBook size={20} />,
-		href: '/dashboard/manage-lesson',
+		label: 'Dashboard',
+		icon: <IconDashboard size={25} />,
+		href: '/',
 	},
 	{
-		label: 'Vocabulary Management',
-		icon: <IconVocabulary size={20} />,
-		href: '/dashboard/manage-vocabulary',
-	},
-	{
-		label: 'User Management',
-		icon: <IconUsers size={20} />,
-		href: '/dashboard/manage-user',
+		label: 'All Properties',
+		icon: <IconBuildingSkyscraper size={25} />,
+		href: '/all-properties',
 	},
 ];

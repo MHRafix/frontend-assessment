@@ -29,6 +29,7 @@
 		"react-dom": "19.0.0",
 		"react-hook-form": "^7.43.9",
 		"typescript": "4.9.4",
+		"use-count-up": "^3.0.1",
 		"yup": "^0.32.11"
 	},
 	"devDependencies": {
