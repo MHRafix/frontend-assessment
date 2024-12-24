@@ -10,7 +10,7 @@ import {
 } from '@tabler/icons-react';
 import { IFakeDataType } from '../data-types/data.types';
 
-export const DashboardData: IFakeDataType = {
+export const dashboardData: IFakeDataType = {
 	analyticsSummaryData: [
 		{
 			name: 'Grand Revenue',
