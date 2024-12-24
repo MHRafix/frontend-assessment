@@ -26,6 +26,7 @@ const DashboardNavbar: React.FC<Props> = ({ opened, onOpened }) => {
 	return (
 		<Navbar
 			hiddenBreakpoint='sm'
+			bg={'#F1F0FF'}
 			hidden={!opened}
 			width={{ sm: 200, lg: 250 }}
 			style={{ zIndex: 100000000 }}
@@ -93,9 +94,6 @@ const DashboardNavbar: React.FC<Props> = ({ opened, onOpened }) => {
 				))}
 			</Navbar.Section>
 			<Space h={20} />
-			{/* <Navbar.Section>
-				<UserButton />
-			</Navbar.Section> */}
 		</Navbar>
 	);
 };

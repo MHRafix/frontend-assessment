@@ -19,4 +19,6 @@ export interface IProperty {
 	discount: number;
 	size: string;
 	owner: string;
+	category: string;
+	status: string;
 }

@@ -1,4 +1,4 @@
-import { AppShell, Box } from '@mantine/core';
+import { AppShell } from '@mantine/core';
 import Head from 'next/head';
 import { PropsWithChildren, useState } from 'react';
 import DashboardHeader from './layout-components/DashboardHeader';
@@ -27,13 +27,14 @@ const DashboardLayout: React.FC<PropsWithChildren<Props>> = ({
 				navbarOffsetBreakpoint='sm'
 				asideOffsetBreakpoint='sm'
 				navbar={<DashboardNavbar opened={opened} onOpened={setOpened} />}
-				children={children}
-				footer={
-					<Box className='flex justify-center items-center bg-black text-white'>
-						lorem400
-					</Box>
-				}
-			></AppShell>
+				// footer={
+				// 	<Box className='flex justify-center items-center bg-black text-white'>
+				// 		lorem400
+				// 	</Box>
+				// }
+			>
+				<main className='mt-[110px] lg:mx-0 mx-1'>{children}</main>
+			</AppShell>
 		</div>
 	);
 };

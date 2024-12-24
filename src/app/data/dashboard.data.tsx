@@ -74,6 +74,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 10,
 			size: '3 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'Commercial',
+			status: 'AVAILABLE',
 		},
 		{
 			name: 'Affordable Flat in Rampura',
@@ -83,6 +85,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 10,
 			size: '2 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'Commercial',
+			status: 'AVAILABLE',
 		},
 		{
 			name: 'Spacious Apartment in Uttara Sector-13',
@@ -92,6 +96,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 10,
 			size: '3 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'House',
+			status: 'AVAILABLE',
 		},
 		{
 			name: 'Modern Flat in Gulshan-2',
@@ -101,6 +107,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 10,
 			size: '4 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'House',
+			status: 'AVAILABLE',
 		},
 		{
 			name: 'Ready Flat in Mirpur',
@@ -110,6 +118,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 10,
 			size: '3 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'House',
+			status: 'AVAILABLE',
 		},
 		{
 			name: 'House in Malibagh Chowdhury Para',
@@ -119,6 +129,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 10,
 			size: '3 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'House',
+			status: 'AVAILABLE',
 		},
 		{
 			name: 'Flat in Bashundhara Block-D',
@@ -128,6 +140,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 10,
 			size: '3 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'House',
+			status: 'RENTED',
 		},
 		{
 			name: 'Flat in Bashundhara Block-F',
@@ -137,6 +151,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 10,
 			size: '3 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'Commercial',
+			status: 'AVAILABLE',
 		},
 		{
 			name: 'Flat in Bashundhara',
@@ -146,6 +162,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 10,
 			size: '3 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'House',
+			status: 'AVAILABLE',
 		},
 		{
 			name: 'Flat in Bashundhara',
@@ -155,6 +173,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 10,
 			size: '4 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'Commercial',
+			status: 'RENTED',
 		},
 		{
 			name: 'Flat in Uttara Sector-13',
@@ -164,6 +184,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 0,
 			size: '3 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'House',
+			status: 'AVAILABLE',
 		},
 		{
 			name: 'Flat in Gulshan-2',
@@ -173,6 +195,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 0,
 			size: '4 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'House',
+			status: 'AVAILABLE',
 		},
 		{
 			name: 'Flat in Bashundhara R/A (Block-D)',
@@ -182,6 +206,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 0,
 			size: '3 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'Commercial',
+			status: 'RENTED',
 		},
 		{
 			name: 'Flat in Bashundhara R/A (Block-F)',
@@ -191,6 +217,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 0,
 			size: '3 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'House',
+			status: 'AVAILABLE',
 		},
 		{
 			name: 'Flat in Rampura',
@@ -200,6 +228,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 0,
 			size: '2 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'House',
+			status: 'AVAILABLE',
 		},
 		{
 			name: 'Flat in Mirpur',
@@ -209,6 +239,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 0,
 			size: '3 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'House',
+			status: 'AVAILABLE',
 		},
 		{
 			name: 'House in Malibagh Chowdhury Para',
@@ -218,6 +250,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 0,
 			size: '3 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'House',
+			status: 'AVAILABLE',
 		},
 		{
 			name: 'Flat in Bashundhara',
@@ -227,6 +261,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 0,
 			size: '3 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'House',
+			status: 'AVAILABLE',
 		},
 		{
 			name: 'Flat in Bashundhara',
@@ -236,6 +272,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 0,
 			size: '4 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'House',
+			status: 'AVAILABLE',
 		},
 		{
 			name: 'Flat in Uttara',
@@ -245,6 +283,8 @@ export const dashboardData: IFakeDataType = {
 			discount: 0,
 			size: '3 bedrooms, 1 kitchen',
 			owner: 'Dhaka Home',
+			category: 'House',
+			status: 'AVAILABLE',
 		},
 		{
 			name: 'Modern Apartment in Dhanmondi',
@@ -253,7 +293,9 @@ export const dashboardData: IFakeDataType = {
 			salePrice: '৳13,500,000',
 			discount: 10,
 			size: '3 bedrooms, 1 kitchen',
-			owner: 'Bproperty',
+			owner: 'Dhaka Home',
+			category: 'Apartment',
+			status: 'RENTED',
 		},
 		{
 			name: 'Cozy Flat in Banani',
@@ -262,7 +304,9 @@ export const dashboardData: IFakeDataType = {
 			salePrice: '৳16,200,000',
 			discount: 10,
 			size: '3 bedrooms, 1 kitchen',
-			owner: 'Bproperty',
+			owner: 'Dhaka Home',
+			category: 'Apartment',
+			status: 'RENTED',
 		},
 		{
 			name: 'Spacious Apartment in Baridhara',
@@ -271,7 +315,9 @@ export const dashboardData: IFakeDataType = {
 			salePrice: '৳22,500,000',
 			discount: 10,
 			size: '4 bedrooms, 1 kitchen',
-			owner: 'Bproperty',
+			owner: 'Dhaka Home',
+			category: 'Apartment',
+			status: 'RENTED',
 		},
 		{
 			name: 'Elegant Flat in Mohammadpur',
@@ -280,7 +326,9 @@ export const dashboardData: IFakeDataType = {
 			salePrice: '৳8,100,000',
 			discount: 10,
 			size: '3 bedrooms, 1 kitchen',
-			owner: 'Bproperty',
+			owner: 'Dhaka Home',
+			category: 'House',
+			status: 'RENTED',
 		},
 		{
 			name: 'Affordable Apartment in Mirpur',
@@ -289,7 +337,9 @@ export const dashboardData: IFakeDataType = {
 			salePrice: '৳5,400,000',
 			discount: 10,
 			size: '2 bedrooms, 1 kitchen',
-			owner: 'Bproperty',
+			owner: 'Dhaka Home',
+			category: 'Apartment',
+			status: 'RENTED',
 		},
 		{
 			name: 'Luxury Condo in Gulshan',
@@ -298,7 +348,9 @@ export const dashboardData: IFakeDataType = {
 			salePrice: '৳27,000,000',
 			discount: 10,
 			size: '4 bedrooms, 1 kitchen',
-			owner: 'Bproperty',
+			owner: 'Dhaka Home',
+			category: 'Commercial',
+			status: 'RENTED',
 		},
 		{
 			name: 'Duplex in Uttara',
@@ -307,7 +359,9 @@ export const dashboardData: IFakeDataType = {
 			salePrice: '৳18,000,000',
 			discount: 10,
 			size: '4 bedrooms, 1 kitchen',
-			owner: 'Bproperty',
+			owner: 'Dhaka Home',
+			category: 'Apartment',
+			status: 'RENTED',
 		},
 		{
 			name: 'Penthouse in Bashundhara R/A',
@@ -316,7 +370,9 @@ export const dashboardData: IFakeDataType = {
 			salePrice: '৳31,500,000',
 			discount: 10,
 			size: '5 bedrooms, 1 kitchen',
-			owner: 'Bproperty',
+			owner: 'Dhaka Home',
+			category: 'Commercial',
+			status: 'RENTED',
 		},
 		{
 			name: 'Studio Apartment in Tejgaon',
@@ -325,7 +381,9 @@ export const dashboardData: IFakeDataType = {
 			salePrice: '৳3,600,000',
 			discount: 10,
 			size: '1 bedroom, 1 kitchen',
-			owner: 'Bproperty',
+			owner: 'Dhaka Home',
+			category: 'Apartment',
+			status: 'RENTED',
 		},
 		{
 			name: 'Family Flat in Shantinagar',
@@ -334,7 +392,9 @@ export const dashboardData: IFakeDataType = {
 			salePrice: '৳7,650,000',
 			discount: 10,
 			size: '3 bedrooms, 1 kitchen',
-			owner: 'Bproperty',
+			owner: 'Dhaka Home',
+			category: 'Commercial',
+			status: 'RENTED',
 		},
 	],
 };

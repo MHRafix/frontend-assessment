@@ -11,11 +11,12 @@ const DashboardHeader: React.FC<Props> = ({ opened, setOpened }) => {
 	const [isDarkModeOn, setIsDarkModeOn] = useState<boolean>();
 
 	return (
-		<Box className='px-3 py-5 border-[0px] border-b-[1px] border-b-slate-300 border-solid'>
+		<Box className='bg-[#F1F0FF] lg:block flex justify-between items-center fixed w-full top-0 z-[99999] px-3 py-5 border-[0px] border-b-[1px] border-b-slate-300 border-solid'>
 			<Burger
-				className='sm:!block md:!hidden'
+				className='block lg:!hidden'
 				opened={opened}
 				onClick={() => setOpened(!opened)}
+				size={40}
 				// @ts-ignore
 				color={opened && 'red'}
 			/>
@@ -37,7 +38,7 @@ const DashboardHeader: React.FC<Props> = ({ opened, setOpened }) => {
 					)}
 
 					<Avatar
-						variant='outline'
+						variant='filled'
 						className='cursor-pointer'
 						color={'violet'}
 						size={'lg'}

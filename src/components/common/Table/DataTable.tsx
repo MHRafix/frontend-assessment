@@ -4,6 +4,7 @@ import cls from 'classnames';
 // import { mkConfig } from 'export-to-csv';
 import {
 	MRT_ColumnDef,
+	MRT_ToggleFiltersButton,
 	MantineReactTable,
 	useMantineReactTable,
 } from 'mantine-react-table';
@@ -19,6 +20,7 @@ interface Prop {
 	ActionArea?: React.ReactNode;
 	tableTitle: string;
 	RowActionMenu?: (row: any) => React.ReactNode;
+	isEnablePagination?: boolean;
 }
 
 // const csvConfig = mkConfig({
@@ -34,8 +36,8 @@ const DataTable: React.FC<Prop> = ({
 	refetch,
 	ActionArea,
 	RowActionMenu,
-	totalCount,
 	tableTitle,
+	isEnablePagination = false,
 }) => {
 	const table = useMantineReactTable({
 		columns,
@@ -44,42 +46,58 @@ const DataTable: React.FC<Prop> = ({
 			showProgressBars: loading,
 			showAlertBanner: true,
 		},
+		enableTableFooter: false,
+		enablePagination: isEnablePagination,
 
+		mantineTableHeadCellProps: { bg: '#F1F0FF' },
+		mantineTableBodyCellProps: { bg: '#F1F0FF' },
+		mantineTableHeadRowProps: { bg: '#F1F0FF' },
 		enableRowActions: RowActionMenu ? true : false,
 		positionActionsColumn: 'last',
+		mantineTableFooterCellProps: { bg: '#F1F0FF !important' },
 		renderRowActionMenuItems: (_row: any) =>
 			RowActionMenu?.(_row?.row?.original),
 		renderTopToolbar: () => {
 			return (
-				<div className='bg-[#F1F0FF] flex justify-between items-center px-2 py-4'>
-					<Title order={3} fw={700}>
-						{tableTitle}
-					</Title>
-					<Flex gap={'md'} justify={'space-between'} align={'center'}>
-						{loading ? (
-							<Loader size={'lg'} color='violet' />
-						) : (
-							<ActionIcon
-								onClick={() => refetch?.()}
-								variant='outline'
-								radius={100}
-								size={45}
-							>
-								<IconRefresh
-									size={35}
-									className={cls({ 'animate-reverse-spin': loading })}
-								/>
-							</ActionIcon>
-						)}
+				<>
+					<div className='bg-[#F1F0FF] flex justify-between items-center px-2 py-4'>
+						<Title order={4} fw={700}>
+							{tableTitle}
+						</Title>
+						{ActionArea && (
+							<Flex gap={'md'} justify={'space-between'} align={'center'}>
+								<MRT_ToggleFiltersButton color='violet' table={table} />
+								{loading ? (
+									<Loader size={'lg'} color='violet' />
+								) : (
+									<ActionIcon
+										onClick={() => refetch?.()}
+										variant='outline'
+										radius={100}
+										size={45}
+										c={'violet'}
+									>
+										<IconRefresh
+											size={35}
+											className={cls({ 'animate-reverse-spin': loading })}
+										/>
+									</ActionIcon>
+								)}
 
-						{ActionArea}
-					</Flex>
-				</div>
+								{ActionArea}
+							</Flex>
+						)}
+					</div>
+				</>
 			);
 		},
 	});
 
-	return <MantineReactTable table={table} />;
+	return (
+		<div>
+			<MantineReactTable table={table} />
+		</div>
+	);
 };
 
 export default DataTable;
