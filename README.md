@@ -29,4 +29,4 @@ pnpm dev
 
 ## Deploy on Vercel
 
-[https://frontend-assessment-psi-three.vercel.app/]
+[https://properties-management-mehedi.vercel.app/]

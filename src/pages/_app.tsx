@@ -24,9 +24,7 @@ export default function App({ Component, pageProps }: AppProps) {
 
 	// save properties in local storage
 	useEffect(() => {
-		if (!allProperties?.length) {
-			setProperties(dashboardData?.properties);
-		}
+		setProperties(dashboardData?.properties);
 
 		if (!mode) {
 			setMode('light');
