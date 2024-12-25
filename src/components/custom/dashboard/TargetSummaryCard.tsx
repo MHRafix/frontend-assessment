@@ -10,7 +10,7 @@ interface ITargetCardProps {
 
 const TargetSummaryCard: React.FC<ITargetCardProps> = ({ targetData }) => {
 	// theme mode
-	const [mode] = useLocalStorage<any>({
+	const [mode = 'light'] = useLocalStorage<any>({
 		key: 'mode',
 	});
 

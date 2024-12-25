@@ -10,7 +10,7 @@ interface Props {
 
 const DashboardHeader: React.FC<Props> = ({ opened, setOpened }) => {
 	// theme mode
-	const [mode, setMode] = useLocalStorage<any>({
+	const [mode = 'light', setMode] = useLocalStorage<any>({
 		key: 'mode',
 	});
 

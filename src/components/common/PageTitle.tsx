@@ -18,7 +18,7 @@ const PageTitleArea: React.FC<IPageTitleProps> = ({
 	othersPath,
 }) => {
 	// theme mode
-	const [mode] = useLocalStorage<any>({
+	const [mode = 'light'] = useLocalStorage<any>({
 		key: 'mode',
 	});
 

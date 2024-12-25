@@ -25,7 +25,7 @@ const DashboardNavbar: React.FC<Props> = ({ opened, onOpened }) => {
 	const { asPath } = useRouter();
 
 	// theme mode
-	const [mode] = useLocalStorage<any>({
+	const [mode = 'light'] = useLocalStorage<any>({
 		key: 'mode',
 	});
 
