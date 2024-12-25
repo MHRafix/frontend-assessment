@@ -1,4 +1,3 @@
-import { IProperty } from '@/app/data-types/data.types';
 import { ErrorMessage } from '@hookform/error-message';
 import { yupResolver } from '@hookform/resolvers/yup';
 import { Button, Input, NumberInput, Select, Space } from '@mantine/core';
@@ -7,7 +6,7 @@ import { useForm } from 'react-hook-form';
 import * as Yup from 'yup';
 
 interface IPropertyFormProps {
-	onAddProperties: (properties: IProperty) => void;
+	onAddProperties: (properties: IPropertyFormStateType) => void;
 }
 
 const PropertyForm: React.FC<IPropertyFormProps> = ({ onAddProperties }) => {
@@ -19,6 +18,7 @@ const PropertyForm: React.FC<IPropertyFormProps> = ({ onAddProperties }) => {
 		formState: { errors },
 		watch,
 	} = useForm<IPropertyFormStateType>({
+		// @ts-ignore
 		resolver: yupResolver(Form_ValidationSchema),
 	});
 
@@ -182,6 +182,14 @@ const Form_ValidationSchema = Yup.object().shape({
 	status: Yup.string().required().label('Status'),
 });
 
-export type IPropertyFormStateType = Yup.InferType<
-	typeof Form_ValidationSchema
->;
+export interface IPropertyFormStateType {
+	name: string;
+	location: string;
+	price: number;
+	salePrice: number;
+	discount: number;
+	size: string;
+	owner: string;
+	category: string;
+	status: string;
+}

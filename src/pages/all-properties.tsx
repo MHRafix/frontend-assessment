@@ -92,6 +92,7 @@ const AllProperties: NextPage = () => {
 
 			<Space h={'xl'} />
 
+			{/* properties table */}
 			<DataTable
 				tableTitle='Manage Properties'
 				columns={columns}
@@ -123,7 +124,7 @@ const AllProperties: NextPage = () => {
 				size='lg'
 			>
 				<PropertyForm
-					onAddProperties={(newProperty: IProperty) => {
+					onAddProperties={(newProperty: any) => {
 						onRefetch();
 						drawerHandler.close();
 						setTimeout(() => {
