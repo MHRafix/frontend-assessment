@@ -6,6 +6,7 @@ import {
 	Space,
 	Text,
 } from '@mantine/core';
+import { useLocalStorage } from '@mantine/hooks';
 import {
 	IconBuildingSkyscraper,
 	IconDashboard,
@@ -23,10 +24,15 @@ interface Props {
 const DashboardNavbar: React.FC<Props> = ({ opened, onOpened }) => {
 	const { asPath } = useRouter();
 
+	// theme mode
+	const [mode] = useLocalStorage<any>({
+		key: 'mode',
+	});
+
 	return (
 		<Navbar
 			hiddenBreakpoint='sm'
-			bg={'#F1F0FF'}
+			bg={mode === 'light' ? '#f1f0ff' : '#1E293B'}
 			hidden={!opened}
 			width={{ sm: 200, lg: 250 }}
 			style={{ zIndex: 100000000 }}

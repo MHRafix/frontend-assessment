@@ -1,4 +1,5 @@
 import { ActionIcon, Flex, Loader, Title } from '@mantine/core';
+import { useLocalStorage } from '@mantine/hooks';
 import { IconRefresh } from '@tabler/icons-react';
 import cls from 'classnames';
 // import { mkConfig } from 'export-to-csv';
@@ -39,6 +40,11 @@ const DataTable: React.FC<Prop> = ({
 	tableTitle,
 	isEnablePagination = false,
 }) => {
+	// theme mode
+	const [mode] = useLocalStorage<any>({
+		key: 'mode',
+	});
+
 	const table = useMantineReactTable({
 		columns,
 		data,
@@ -49,18 +55,28 @@ const DataTable: React.FC<Prop> = ({
 		enableTableFooter: false,
 		enablePagination: isEnablePagination,
 
-		mantineTableHeadCellProps: { bg: '#F1F0FF' },
-		mantineTableBodyCellProps: { bg: '#F1F0FF' },
-		mantineTableHeadRowProps: { bg: '#F1F0FF' },
+		mantineTableHeadCellProps: {
+			bg: mode === 'light' ? '#f1f0ff' : '#1E293B',
+		},
+		mantineTableBodyCellProps: {
+			bg: mode === 'light' ? '#f1f0ff' : '#1E293B',
+		},
+		mantineTableHeadRowProps: {
+			bg: mode === 'light' ? '#f1f0ff' : '#1E293B',
+		},
 		enableRowActions: RowActionMenu ? true : false,
 		positionActionsColumn: 'last',
-		mantineTableFooterCellProps: { bg: '#F1F0FF !important' },
+		mantineTableFooterCellProps: {
+			bg: mode === 'light' ? '#f1f0ff' : 'red',
+		},
 		renderRowActionMenuItems: (_row: any) =>
 			RowActionMenu?.(_row?.row?.original),
 		renderTopToolbar: () => {
 			return (
 				<>
-					<div className='bg-[#F1F0FF] flex justify-between items-center px-2 py-4'>
+					<div
+						className={`${mode === 'light' ? 'bg-[#f1f0ff]' : 'bg-slate-800'}  flex justify-between items-center px-2 py-4`}
+					>
 						<Title order={4} fw={700}>
 							{tableTitle}
 						</Title>

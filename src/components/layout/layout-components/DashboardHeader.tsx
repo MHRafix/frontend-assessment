@@ -1,6 +1,7 @@
 import { Avatar, Box, Burger, Group } from '@mantine/core';
+import { useLocalStorage } from '@mantine/hooks';
 import { IconSun, IconSunFilled } from '@tabler/icons-react';
-import React, { useState } from 'react';
+import React from 'react';
 
 interface Props {
 	opened: boolean;
@@ -8,10 +9,15 @@ interface Props {
 }
 
 const DashboardHeader: React.FC<Props> = ({ opened, setOpened }) => {
-	const [isDarkModeOn, setIsDarkModeOn] = useState<boolean>();
+	// theme mode
+	const [mode, setMode] = useLocalStorage<any>({
+		key: 'mode',
+	});
 
 	return (
-		<Box className='bg-[#F1F0FF] lg:block flex justify-between items-center fixed w-full top-0 z-[99999] px-3 py-5 border-[0px] border-b-[1px] border-b-slate-300 border-solid'>
+		<Box
+			className={`${mode === 'light' ? 'bg-[#f1f0ff]' : 'bg-slate-800'} lg:block flex justify-between items-center fixed w-full top-0 z-[99999] px-3 py-5 border-[0px] border-b-[1px] ${mode === 'light' ? 'border-b-300' : 'border-b-slate-600'}   border-solid`}
+		>
 			<Burger
 				className='block lg:!hidden'
 				opened={opened}
@@ -23,16 +29,16 @@ const DashboardHeader: React.FC<Props> = ({ opened, setOpened }) => {
 
 			<div className='flex justify-end items-center'>
 				<Group>
-					{isDarkModeOn ? (
+					{mode === 'dark' ? (
 						<IconSunFilled
 							className='cursor-pointer'
-							onClick={() => setIsDarkModeOn(false)}
+							onClick={() => setMode('light')}
 							size={30}
 						/>
 					) : (
 						<IconSun
 							className='cursor-pointer'
-							onClick={() => setIsDarkModeOn(true)}
+							onClick={() => setMode('dark')}
 							size={30}
 						/>
 					)}

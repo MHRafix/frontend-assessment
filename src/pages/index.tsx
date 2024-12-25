@@ -6,6 +6,7 @@ import AnalyticsSummaryCard from '@/components/custom/dashboard/AnalyticsSummary
 import TargetSummaryCard from '@/components/custom/dashboard/TargetSummaryCard';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { Space, Title } from '@mantine/core';
+import { useLocalStorage } from '@mantine/hooks';
 import { MRT_ColumnDef } from 'mantine-react-table';
 import { NextPage } from 'next';
 import dynamic from 'next/dynamic';
@@ -18,7 +19,14 @@ const HomePage: NextPage = () => {
 	const [loading, setLoading] = useState<boolean>(false);
 
 	// all properties
-	const allProperties: IProperty[] = dashboardData?.properties;
+	const [allProperties, setProperties] = useLocalStorage<IProperty[]>({
+		key: 'allProperties',
+	});
+
+	// theme mode
+	const [mode] = useLocalStorage<any>({
+		key: 'mode',
+	});
 
 	// table rows and columns
 	const columns = useMemo<MRT_ColumnDef<any>[]>(
@@ -92,8 +100,12 @@ const HomePage: NextPage = () => {
 
 			{/* dashboard income chart and target fill-up card */}
 			<div className='grid xl:grid-cols-2 gap-5 w-full'>
-				<div className='grid overflow-x-auto z-50 bg-[#f1f0ff] shadow-lg rounded-md p-2'>
-					<Title order={3}>Monthly Revenue</Title>
+				<div
+					className={`grid overflow-x-auto z-50 ${mode === 'light' ? 'bg-[#f1f0ff]' : 'bg-slate-800'} shadow-lg rounded-md p-2`}
+				>
+					<Title color={mode === 'dark' ? 'white' : 'black'} order={3}>
+						Monthly Revenue
+					</Title>
 					<Chart
 						type='bar'
 						// @ts-ignore
@@ -132,7 +144,7 @@ export default HomePage;
 const state = {
 	series: [
 		{
-			name: 'Net Profit',
+			name: 'Grand Revenue',
 			data: [44, 55, 57, 56, 61, 58, 63, 60, 66],
 		},
 		{
@@ -140,7 +152,7 @@ const state = {
 			data: [76, 85, 101, 98, 87, 105, 91, 114, 94],
 		},
 		{
-			name: 'Free Cash Flow',
+			name: 'Expenses',
 			data: [35, 41, 36, 26, 45, 48, 52, 53, 41],
 		},
 	],

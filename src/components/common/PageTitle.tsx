@@ -1,4 +1,5 @@
 import { Box, Indicator, Text, Title } from '@mantine/core';
+import { useLocalStorage } from '@mantine/hooks';
 import { IconArrowRight } from '@tabler/icons-react';
 import Link from 'next/link';
 import React from 'react';
@@ -16,10 +17,20 @@ const PageTitleArea: React.FC<IPageTitleProps> = ({
 	currentPathName,
 	othersPath,
 }) => {
+	// theme mode
+	const [mode] = useLocalStorage<any>({
+		key: 'mode',
+	});
+
 	return (
 		<Box className='sm:flex justify-between items-center grid gap-y-3'>
 			<div>
-				<Title order={3} fw={500} my={5}>
+				<Title
+					order={3}
+					fw={500}
+					my={5}
+					color={mode === 'dark' ? 'white' : 'black'}
+				>
 					{title}
 				</Title>
 				{tagline && (

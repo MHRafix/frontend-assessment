@@ -1,20 +1,26 @@
 import { IProperty } from '@/app/data-types/data.types';
-import { dashboardData } from '@/app/data/dashboard.data';
+import DrawerWrapper from '@/components/common/Drawer/DrawerWrapper';
 import PageTitleArea from '@/components/common/PageTitle';
 import DataTable from '@/components/common/Table/DataTable';
+import PropertyForm from '@/components/custom/all-properties/PropertyForm';
 import DashboardLayout from '@/components/layout/DashboardLayout';
 import { Badge, Button, Space } from '@mantine/core';
+import { useDisclosure, useLocalStorage } from '@mantine/hooks';
 import { IconPlus } from '@tabler/icons-react';
 import { MRT_ColumnDef } from 'mantine-react-table';
 import { NextPage } from 'next';
 import { useMemo, useState } from 'react';
 
 const AllProperties: NextPage = () => {
+	const [allProperties, setProperties] = useLocalStorage<IProperty[]>({
+		key: 'allProperties',
+	});
+
 	// loading state
 	const [loading, setLoading] = useState<boolean>(false);
 
-	// all properties
-	const allProperties: IProperty[] = dashboardData?.properties;
+	// drawer handler
+	const [opened, drawerHandler] = useDisclosure();
 
 	// table rows and columns
 	const columns = useMemo<MRT_ColumnDef<any>[]>(
@@ -100,6 +106,7 @@ const AllProperties: NextPage = () => {
 							variant='light'
 							leftIcon={<IconPlus size={16} />}
 							size='md'
+							onClick={drawerHandler.open}
 						>
 							Add new
 						</Button>
@@ -109,6 +116,25 @@ const AllProperties: NextPage = () => {
 			/>
 
 			{/* add new property */}
+			<DrawerWrapper
+				close={drawerHandler.close}
+				opened={opened}
+				title='Add Property'
+				size='lg'
+			>
+				<PropertyForm
+					onAddProperties={(newProperty: IProperty) => {
+						onRefetch();
+						drawerHandler.close();
+						setTimeout(() => {
+							setProperties((prevProperties: IProperty[]) => [
+								newProperty,
+								...prevProperties,
+							]);
+						}, 3000);
+					}}
+				/>
+			</DrawerWrapper>
 		</DashboardLayout>
 	);
 };
