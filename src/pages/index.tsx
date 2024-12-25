@@ -111,7 +111,7 @@ const HomePage: NextPage = () => {
 						// @ts-ignore
 						options={state?.options!}
 						series={state?.series}
-						height={350}
+						height={320}
 					/>
 				</div>
 				<div className='grid md:grid-cols-2 gap-5'>

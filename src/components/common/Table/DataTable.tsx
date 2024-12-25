@@ -5,7 +5,6 @@ import cls from 'classnames';
 // import { mkConfig } from 'export-to-csv';
 import {
 	MRT_ColumnDef,
-	MRT_ToggleFiltersButton,
 	MantineReactTable,
 	useMantineReactTable,
 } from 'mantine-react-table';
@@ -82,7 +81,7 @@ const DataTable: React.FC<Prop> = ({
 						</Title>
 						{ActionArea && (
 							<Flex gap={'md'} justify={'space-between'} align={'center'}>
-								<MRT_ToggleFiltersButton color='violet' table={table} />
+								{/* <MRT_ToggleFiltersButton color='violet' table={table} /> */}
 								{loading ? (
 									<Loader size={'lg'} color='violet' />
 								) : (

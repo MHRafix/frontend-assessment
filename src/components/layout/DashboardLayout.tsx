@@ -14,7 +14,7 @@ const DashboardLayout: React.FC<PropsWithChildren<Props>> = ({
 }) => {
 	const [opened, setOpened] = useState(false);
 	return (
-		<div>
+		<div className='overflow-hidden'>
 			<Head>
 				<title>{`UrbanAbode - ${title ? title : 'Dashboard'}`}</title>
 				<meta
@@ -33,7 +33,7 @@ const DashboardLayout: React.FC<PropsWithChildren<Props>> = ({
 				// 	</Box>
 				// }
 			>
-				<main className='mt-[110px] lg:mx-0 mx-1'>{children}</main>
+				<div className='mt-[110px]'>{children}</div>
 			</AppShell>
 		</div>
 	);

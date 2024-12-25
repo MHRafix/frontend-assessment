@@ -18,13 +18,19 @@ export default function App({ Component, pageProps }: AppProps) {
 	});
 
 	// theme mode
-	const [mode] = useLocalStorage<any>({
+	const [mode, setMode] = useLocalStorage<any>({
 		key: 'mode',
 	});
 
 	// save properties in local storage
 	useEffect(() => {
-		if (allProperties?.length) setProperties(dashboardData?.properties);
+		if (!allProperties?.length) {
+			setProperties(dashboardData?.properties);
+		}
+
+		if (!mode) {
+			setMode('light');
+		}
 	}, []);
 
 	return (
